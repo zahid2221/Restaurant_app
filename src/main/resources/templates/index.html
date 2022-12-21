@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Restaurant Management System</title>
+</head>
+<body>  
+   
+    <section >
+    <h1>Welcome To The Hub</h1>
+    <h2 class="text-center" >Good Food Good Mood</h2>
+        <div class="offset-md-10 col-md-3">
+           <div>
+           <a th:href="addnew" class="add-new-btn btn btn-primary">Add New</a>
+           </div>
+        </div>
+          <div class = "container">
+          <div class = "row">
+          <table class = "table table-responsive table-bordered table-striped">
+           <thead >
+              <tr>
+              <th>Full Name </th>
+              <th>Email-id </th>
+              <th>Address </th>
+              <th>Phone </th>
+              <th>Password </th>
+              </tr>
+           </thead>
+           
+           <tbody>
+              <tr th:each="Details: ${Details}">
+                <td th:text="${Details.fullname}"></td>
+                 <td th:text="${Details.email}"></td>
+                  <td th:text="${Details.address}"></td>
+                   <td th:text="${Details.phoneno}"></td>
+                    <td th:text="${Details.password}"></td>
+              </tr>
+           </tbody>
+         </table>
+        </div>
+       </div>
+       
+    </section>
+    
+    
+</body>
+</html>
